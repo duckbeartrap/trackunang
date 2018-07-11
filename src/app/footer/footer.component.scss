@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+
+.tu{
+  &-footer{
+    width: 100%;
+    background: $primaryColor;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+
+    ul{
+      list-style: none !important;
+      margin: 0;
+      padding: 0;
+
+      a:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

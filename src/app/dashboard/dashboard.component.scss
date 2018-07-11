@@ -1,0 +1,142 @@
+@import "../../variables.scss";
+.tu{
+  &-dashboard{
+    width: 100%;
+    height: auto;
+    float: left;
+
+    &__main{
+      width: 100%;
+      padding-top: 50px;
+    }
+
+
+
+    &__devices{
+
+      &__item{
+        position: relative;
+        width: 100%;
+        max-width: 200px;
+        height: 200px;
+        margin: auto;
+        background: white;
+        border: 1px solid #676D97;
+        transition: 0.3s;
+        margin-bottom: 20px;
+
+        &:hover{
+          background: #676D97;
+
+          .tu-dashboard__devices__item__status, .tu-dashboard__devices__item__name, .tu-dashboard__devices__item__actions a{
+            color: white;
+          }
+        }
+
+
+        &__actions{
+          width: 100%;
+          height: 40px;
+
+          ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li{
+              float: right;
+              margin-right: 15px;
+              a{
+                color: #676D97;
+                line-height: 40px;
+                font-size: 20px;
+              }
+            }
+
+          }
+        }
+
+        &__status{
+          width: 100%;
+          height: 120px;
+          line-height: 120px;
+          text-align: center;
+          font-size: 50px;
+          color: #676D97;
+
+        }
+
+        &__name{
+          position: absolute;
+          width: 100%;
+          height: 40px;
+          bottom: 0;
+          text-align: center;
+          line-height: 40px;
+          color: #676D97;
+        }
+      }
+    }
+
+    &__features{
+
+
+      $colors: #4DC0E4, #EA747D, #A46DBC, #52AB85, #5399C9, #F5D971;
+      $hoverColors: #6dc7e3, #e99197, #ac8bba, #70a890, #77a7c8, #f5e29d;
+
+      @for $i from 1 through length($colors) {
+          .tu-dashboard__features__item__cell:nth-child(#{length($colors)}n+#{$i}) .tu-dashboard__features__item{
+              background: darken(nth($colors, $i), 10%);
+              &:hover{
+                background: nth($hoverColors, $i);
+              }
+          }
+      }
+
+
+      padding-bottom: 50px;
+      &__item{
+        position: relative;
+        width: 100%;
+        max-width: 200px;
+        height: 100px;
+        background: red;
+        margin: auto;
+        border-radius: 5px;
+
+        margin-top: 20px;
+
+        &__icon{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          text-align: left;
+          font-size: 90px;
+          color: white;
+          opacity: 0.3;
+          line-height: 100px;
+          padding-left: 20px;
+        }
+
+        &__number{
+          width: 100%;
+          text-align: right;
+          color: white;
+          padding-right: 10px;
+          font-size: 35px;
+          padding-top: 15px;
+        }
+
+        &__name{
+          width: 100%;
+          text-align: right;
+          color: white;
+          padding-right: 10px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

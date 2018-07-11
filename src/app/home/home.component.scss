@@ -1,0 +1,169 @@
+@import "../../variables.scss";
+
+.tu{
+
+
+
+  &-home{
+    width: 100%;
+    background: $primaryColor;
+
+    &__insetShadow{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      -webkit-box-shadow: inset 0px -137px 64px -75px rgba(255,255,255,1);
+      -moz-box-shadow: inset 0px -137px 64px -75px rgba(255,255,255,1);
+      box-shadow: inset 0px -137px 64px -75px rgba(255,255,255,1);
+    }
+
+
+    &__iphone{
+      width: 300px;
+      height: 600px;
+      background: url("assets/img/iphoneMock.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+
+    &__section{
+      width: 100%;
+      overflow: hidden;
+
+      &__one{
+        position: relative;
+
+        padding-top: 50px;
+
+        .col{
+          height: 600px;
+        }
+
+        .tu-home__iphone{
+          float: left;
+          height: 400px;
+          background-size: cover;
+          background-position: top;
+        }
+
+        &__heading{
+          font-size: 40px;
+          color: #6689FC;
+          text-align: center;
+
+        }
+
+        &__list{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          width: 100%;
+
+          li{
+            color: white;
+            font-size: 30px;
+            text-align: center;
+
+          }
+        }
+
+        &__get{
+          display: block;
+          position: relative;
+          width: 100%;
+          max-width: 150px;
+          height: 50px;
+          color: white;
+          float: right;
+          text-align: center;
+          line-height: 50px;
+          text-decoration: none;
+          margin-left: 10px;
+          margin-top: 50px;
+          z-index: 1;
+
+
+
+          &__apple{
+            background: url("assets/img/appstore.png");
+            background-size: cover;
+            background-position: center;
+            float: left;
+          }
+
+          &__android{
+            background: url("assets/img/playstore.png");
+            background-size: cover;
+            background-position: center;
+            float: right;
+          }
+        }
+      }
+      &__two{
+        background: white;
+        color: $primaryColor;
+
+        $colors: #4DC0E4, #EA747D, #A46DBC, #52AB85, #5399C9, #F5D971;
+        $hoverColors: #6dc7e3, #e99197, #ac8bba, #70a890, #77a7c8, #f5e29d;
+
+        @for $i from 1 through length($colors) {
+            .tu-home__section__two__cell:nth-child(#{length($colors)}n+#{$i}) .tu-home__section__two__feature {
+                background: darken(nth($colors, $i), 10%);
+                &:hover{
+                  background: nth($hoverColors, $i);
+                }
+            }
+        }
+
+        &__cell{
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+
+        &__feature{
+          width: 150px;
+          height: 100px;
+          margin: auto;
+          background: black;
+          border-radius: 75px;
+          text-align: center;
+          line-height: 100px;
+          color: white;
+          font-size: 60px;
+          transition: 0.3s;
+          &:hover{
+            cursor: pointer;
+          }
+
+          &__name{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 25px;
+          }
+        }
+      }
+
+      &__three{
+        background: #e8e8e8;
+
+        &__tutorial{
+          width: 100px;
+          height: 100px;
+          border-radius: 100%;
+          background: #4DC0E4;
+          margin: auto;
+          text-align: center;
+          line-height: 100px;
+          font-size: 30px;
+          color: white;
+        }
+      }
+    }
+  }
+}
